@@ -18,7 +18,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: docker.pkg.github.com/international-data-spaces-association/dataspaceconnector/dataspace-connector
+          images: ghcr.io/international-data-spaces-association/dataspace-connector
           tag-semver: |
             {{version}}
       -
@@ -28,11 +28,11 @@ jobs:
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       -
-        name: Login to Github Packages
+        name: Login to Github Container Registry
         uses: docker/login-action@v1
         with:
-          registry: docker.pkg.github.com
-          username: ${{ github.actor }}
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.DOCKER_PW }}
       -
         name: Build and push
