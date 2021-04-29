@@ -25,7 +25,8 @@ import org.springframework.context.annotation.ComponentScan;
     "de.fraunhofer.isst.dataspaceconnector",
     "de.fraunhofer.isst.ids.framework.communication",
     "de.fraunhofer.isst.ids.framework.configuration",
-    "de.fraunhofer.isst.ids.framework.daps"
+    "de.fraunhofer.isst.ids.framework.daps",
+        "de.fraunhofer.ccit.examples"
 })
 public class ConnectorApplication {
 
@@ -69,4 +70,5 @@ public class ConnectorApplication {
                     .url(properties.getProperty("licence_url")))
             );
     }
+
 }

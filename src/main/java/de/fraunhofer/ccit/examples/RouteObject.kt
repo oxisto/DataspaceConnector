@@ -1,10 +1,11 @@
 package de.fraunhofer.ccit.examples
 
-class RouteObject(var status: String,
-                  var uptime: String,
-                  var context: String,
-                  var shortName: String,
-                  var dot: String,
-                  var description: Long,
-                  var id: String){
+class RouteObject(
+        var id: String,
+        var description: String?,
+        var dot: String,
+        var shortName: String,
+        var context: String,
+        var uptime: Long,
+        var status: String) {
 }

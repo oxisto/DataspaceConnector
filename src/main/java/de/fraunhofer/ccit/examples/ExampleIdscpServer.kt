@@ -19,7 +19,7 @@ open class ExampleIdscpServer {
     lateinit var rm: RouteManager
 
     @Bean
-    fun showCamelInfo(ctx: ApplicationContext): CommandLineRunner? {
+    open fun showCamelInfo(): CommandLineRunner? {
         return CommandLineRunner {
             val routes = rm.getRoutes()
 

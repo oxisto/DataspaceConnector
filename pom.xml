@@ -108,7 +108,7 @@
 		<taglist.version>2.4</taglist.version>
 		<jxr.version>3.0.0</jxr.version>
 		<jdepend.version>2.0</jdepend.version>
-		<camel.version>3.9.0</camel.version>
+		<camel.version>3.0.1</camel.version>
 
 		<!-- Licence -->
 		<licence_name>Apache License, Version 2.0</licence_name>
@@ -253,6 +253,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>de.fhg.aisec.ids</groupId>
+			<artifactId>camel-idscp2</artifactId>
+			<version>0.4.2</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.apache.camel.springboot</groupId>
 			<artifactId>camel-spring-boot-starter</artifactId>
 			<version>${camel.version}</version>
@@ -364,7 +370,12 @@
 			<version>${kotlin.version}</version>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+    </dependencies>
 
 	<repositories>
 		<repository>
