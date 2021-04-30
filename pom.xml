@@ -108,7 +108,7 @@
 		<taglist.version>2.4</taglist.version>
 		<jxr.version>3.0.0</jxr.version>
 		<jdepend.version>2.0</jdepend.version>
-		<camel.version>3.0.1</camel.version>
+		<camel.version>3.9.0</camel.version>
 
 		<!-- Licence -->
 		<licence_name>Apache License, Version 2.0</licence_name>
@@ -370,12 +370,13 @@
 			<version>${kotlin.version}</version>
 			<scope>test</scope>
 		</dependency>
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib-jdk8</artifactId>
-            <version>${kotlin.version}</version>
-        </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>com.github.industrial-data-space</groupId>
+			<artifactId>idscp2-java</artifactId>
+			<version>camel-39-SNAPSHOT</version>
+		</dependency>
+
+	</dependencies>
 
 	<repositories>
 		<repository>
@@ -387,6 +388,10 @@
 			<id>eis-ids-public</id>
 			<name>maven-snapshots</name>
 			<url>https://maven.iais.fraunhofer.de/artifactory/eis-ids-public</url>
+		</repository>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
 		</repository>
 	</repositories>
 
@@ -422,7 +427,26 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<classifier>exec</classifier>
+				</configuration>
 			</plugin>
+			<!--<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<appendAssemblyId>true</appendAssemblyId>
+							<finalName>${pom.artifactId}-${pom.version}</finalName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
